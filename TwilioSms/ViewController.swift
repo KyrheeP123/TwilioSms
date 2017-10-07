@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
     
@@ -14,6 +15,16 @@ class ViewController: UIViewController {
     @IBOutlet var messageField: UITextField!
     
     @IBAction func sendData(sender: AnyObject) {
+        let  headers = ["Content-Type": "application/x-www-form-urlencoded"]
+
+        let parameters: Parameters = ["To": phoneNumberField.text ?? "","Body": messageField.text ?? ""]
+
+        Alamofire.request("http://b7e2822f.ngrok.io/", method: .post, parameters: parameters, headers: headers).response
+        { response in
+            print(response)
+        }
+
+        
         
     }
     
