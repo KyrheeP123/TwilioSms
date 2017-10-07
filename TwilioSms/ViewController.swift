@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
         let parameters: Parameters = ["To": phoneNumberField.text ?? "","Body": messageField.text ?? ""]
 
-        Alamofire.request("http://b7e2822f.ngrok.io/", method: .post, parameters: parameters, headers: headers).response
+        Alamofire.request("http://381a7463.ngrok.io/", method: .post, parameters: parameters, headers: headers).response
         { response in
             print(response)
         }
